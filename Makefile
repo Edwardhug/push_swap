@@ -6,13 +6,14 @@
 #    By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/31 10:38:36 by lgabet            #+#    #+#              #
-#    Updated: 2023/01/31 16:21:32 by lgabet           ###   ########.fr        #
+#    Updated: 2023/01/31 19:06:52 by lgabet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
+FT_PRINTF	= ft_printf
 # SRCS	= 
 
 

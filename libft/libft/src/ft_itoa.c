@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/14 14:06:34 by lgabet            #+#    #+#             */
-/*   Updated: 2022/12/14 14:53:57 by lgabet           ###   ########.fr       */
+/*   Created: 2022/11/16 13:08:00 by lgabet            #+#    #+#             */
+/*   Updated: 2023/01/31 15:23:52 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ft_printf.h"
+#include "../includes/libft.h"
 
 int	ft_size(int n)
 {
@@ -103,8 +103,6 @@ char	*ft_itoa(int n)
 	if (n == 0)
 	{
 		str = malloc(sizeof(char) * 2);
-		if (!str)
-			return (NULL);
 		str[0] = '0';
 		str[1] = '\0';
 		return (str);
@@ -112,8 +110,6 @@ char	*ft_itoa(int n)
 	if (n == -2147483648)
 	{
 		str = malloc(sizeof(char) * 12);
-		if (!str)
-			return (NULL);
 		ft_exception(str);
 		return (str);
 	}

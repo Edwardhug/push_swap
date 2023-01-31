@@ -5,79 +5,48 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/31 15:21:10 by lgabet            #+#    #+#              #
-#    Updated: 2023/01/31 15:21:24 by lgabet           ###   ########.fr        #
+#    Created: 2022/12/07 12:15:56 by lgabet            #+#    #+#              #
+#    Updated: 2023/01/31 15:34:15 by lgabet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libft.a
+NAME	= libftprintf.a
+LIBFT	= libft
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
-SRCS	= src/ft_isascii.c\
-src/ft_memset.c\
-src/ft_strnstr.c\
-src/ft_isdigit.c\
-src/ft_strchr.c\
-src/ft_strrchr.c\
-src/ft_atoi.c\
-src/ft_isprint.c\
-src/ft_strdup.c\
-src/ft_tolower.c\
-src/ft_bzero.c\
-src/ft_memchr.c\
-src/ft_strlcat.c\
-src/ft_toupper.c\
-src/ft_calloc.c\
-src/ft_memcmp.c\
-src/ft_strlcpy.c\
-src/ft_isalnum.c\
-src/ft_memcpy.c\
-src/ft_strlen.c\
-src/ft_isalpha.c\
-src/ft_memmove.c\
-src/ft_strncmp.c\
-src/ft_substr.c\
-src/ft_strjoin.c\
-src/ft_strtrim.c\
-src/ft_split.c\
+SRCS	= src/ft_printchar.c\
+src/ft_printstr.c\
+src/ft_printf.c\
+src/ft_printaddress.c\
+src/ft_printnbr.c\
+src/ft_print_unsigned.c\
+src/ft_print_hexa.c\
 src/ft_itoa.c\
-src/ft_strmapi.c\
-src/ft_striteri.c\
-src/ft_putchar_fd.c\
-src/ft_putstr_fd.c\
-src/ft_putendl_fd.c\
-src/ft_putnbr_fd.c\
-src/ft_lstnew.c\
-src/ft_lstadd_front.c\
-src/ft_lstsize.c\
-src/ft_lstlast.c\
-src/ft_lstadd_back.c\
-src/ft_lstdelone.c\
-src/ft_lstclear.c\
-src/ft_lstiter.c\
-src/ft_lstmap.c
+src/ft_unsigned_itoa.c\
+src/ft_itoa_x.c
 
-HEADERS = includes/libft.h
+
+INCLUDES = includes/ft_printf.h
 OBJS= ${SRCS:.c=.o}
-# OBJS_B= ${SRCS_B:.c=.o}
-
 
 all: $(NAME)
 
-%.o : %.c $(HEADERS)
+%.o : %.c $(INCLUDES)
 		$(CC) $(CFLAGS) -c $< -o ${<:.c=.o}
 	
-$(NAME) : $(OBJS) $(HEADERS)
-	ar -rcs $(NAME) $(OBJS) $(HEADERS)
-
-# bonus:	$(OBJS) $(OBJS_B)
-# 			ar -rcs $(NAME) $(OBJS) $(OBJS_B) $(HEADERS)
+$(NAME) : $(OBJS) $(INCLUDES)
+	@make -C $(LIBFT)
+	@cp libft/libft.a .
+	@mv libft.a $(NAME)
+	ar -rcs $(NAME) $(OBJS) $(INCLUDES)
 
 clean:
 	rm -f ${OBJS}
+	@make clean -C $(LIBFT)
 
 fclean: clean
 	rm -f $(NAME)
+	@make fclean -C $(LIBFT)
 
 re: fclean all
 
