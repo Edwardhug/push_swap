@@ -5,18 +5,28 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/31 10:38:36 by lgabet            #+#    #+#              #
-#    Updated: 2023/01/31 16:21:32 by lgabet           ###   ########.fr        #
+#    Created: 2022/12/07 12:15:56 by lgabet            #+#    #+#              #
+#    Updated: 2023/01/31 16:16:09 by lgabet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= push_swap
+NAME	= libftprintf.a
+LIBFT	= ../libft
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
-# SRCS	= 
+SRCS	= src/ft_printchar.c\
+src/ft_printstr.c\
+src/ft_printf.c\
+src/ft_printaddress.c\
+src/ft_printnbr.c\
+src/ft_print_unsigned.c\
+src/ft_print_hexa.c\
+src/ft_itoa.c\
+src/ft_unsigned_itoa.c\
+src/ft_itoa_x.c
 
 
-INCLUDES = includes/push_swap.h
+INCLUDES = includes/ft_printf.h
 OBJS= ${SRCS:.c=.o}
 
 all: $(NAME)
@@ -25,13 +35,18 @@ all: $(NAME)
 		$(CC) $(CFLAGS) -c $< -o ${<:.c=.o}
 	
 $(NAME) : $(OBJS) $(INCLUDES)
+	@make -C $(LIBFT)
+	@cp ../libft/libft.a .
+	@mv libft.a $(NAME)
 	ar -rcs $(NAME) $(OBJS) $(INCLUDES)
 
 clean:
-	rm -f src/*.o
+	rm -f ${OBJS}
+	@make clean -C $(LIBFT)
 
 fclean: clean
 	rm -f $(NAME)
+	@make fclean -C $(LIBFT)
 
 re: fclean all
 
