@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 19:40:52 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/31 19:42:35 by lgabet           ###   ########.fr       */
+/*   Created: 2023/01/31 19:13:06 by lgabet            #+#    #+#             */
+/*   Updated: 2023/01/31 19:41:13 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../includes/push_swap.h"
 
-# include "../libft/includes/ft_printf.h"
-# include "../libft/libft/includes/libft.h"
-
-#endif
+int	main(void)
+{
+	ft_printf("%s\n", "salut");
+	return (0);
+}
