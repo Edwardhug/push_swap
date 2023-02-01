@@ -6,7 +6,7 @@
 #    By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/31 10:38:36 by lgabet            #+#    #+#              #
-#    Updated: 2023/01/31 19:39:42 by lgabet           ###   ########.fr        #
+#    Updated: 2023/02/01 16:08:25 by lgabet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME	= push_swap
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
 LIBFT	= libft
-SRCS	= src/main.c
+SRCS	= src/main.c\
+src/ft_error.c
 
 INCLUDES = includes/push_swap.h
 OBJS= ${SRCS:.c=.o}

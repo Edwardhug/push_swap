@@ -6,14 +6,18 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:13:06 by lgabet            #+#    #+#             */
-/*   Updated: 2023/01/31 19:41:13 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/01 16:06:34 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	ft_printf("%s\n", "salut");
+	if (have_error(ac, av) == 1)
+	{
+		write(2, "Error\n", 6);
+		return (1);
+	}
 	return (0);
 }
