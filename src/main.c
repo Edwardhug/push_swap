@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:13:06 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/01 16:52:45 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/02 19:48:54 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,18 @@
 
 int	main(int ac, char **av)
 {
-	int	*tab;
+	t_list	*a;
+	t_list	*b;
 
-	if (have_error(ac, av) == 1)
+	if(!(a = ft_fill_tab(ac, av)))
 	{
 		write(2, "Error\n", 6);
 		return (1);
 	}
-	tab = ft_fill_tab(ac, av);
+	// if (have_error(ac, av) == 1)
+	// {
+	// 	write(2, "Error\n", 6);
+	// 	return (1);
+	// }
 	return (0);
 }
