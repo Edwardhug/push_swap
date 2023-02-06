@@ -16,16 +16,20 @@
 # include "../libft/includes/ft_printf.h"
 # include "../libft/libft/includes/libft.h"
 
-typedef struct s_list
+typedef struct s_stack
 {
 	int				num;
 	struct s_list	*next;
 	int				size;
-}				t_list;
+}				t_stack;
 
 int	have_error(int ac, char **av);
 int	have_no_number_charac(int ac, char **av);
 int	have_space(char **av);
-int	*ft_fill_tab(int ac, char **av);
+int	ft_fill_tab(int ac, char **av);
+int	*ft_convert_to_index(int ac, char **av);
+int	*ft_fill_index(int ac, int *tab_int);
+int	ft_found_index(int *tab, int i, int ac);
+int	have_same_numbers(int ac, int *tab);
 
 #endif

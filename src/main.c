@@ -14,18 +14,20 @@
 
 int	main(int ac, char **av)
 {
-	t_list	*a;
-	t_list	*b;
+	int	a;
+	// t_list	*b;
 
-	if(!(a = ft_fill_tab(ac, av)))
-	{
-		write(2, "Error\n", 6);
-		return (1);
-	}
 	// if (have_error(ac, av) == 1)
 	// {
 	// 	write(2, "Error\n", 6);
 	// 	return (1);
 	// }
+	// ft_printf("%s\n", "yooooo");
+	a = ft_fill_tab(ac, av);
+	if(a == 1)
+	{
+		write(2, "Error\n", 6);
+		return (1);
+	}
 	return (0);
 }

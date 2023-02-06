@@ -12,11 +12,14 @@
 
 #include "../includes/push_swap.h"
 
-t_list	*ft_fill_tab(int ac, char **av)
+int	ft_fill_tab(int ac, char **av)
 {
 	int		*tab_index;
 
-	tab_index = ft_convert_to_index(ac, char **av);
+	tab_index = ft_convert_to_index(ac, av);
+	if (!tab_index)
+		return (1);
+	return (1);
 }
 
 int	*ft_convert_to_index(int ac, char **av)
@@ -37,8 +40,11 @@ int	*ft_convert_to_index(int ac, char **av)
 	while (tab_char[++i])
 		tab_int[i] = ft_atoi(tab_char[i]);
 	tab_index = ft_fill_index(ac, tab_int);
-	if (!tab_index)
+	if (!tab_index || have_same_numbers(ac, tab_int))
+	{
+		free(tab_int);
 		return (NULL);
+	}
 	return (tab_index);
 }
 
@@ -46,15 +52,51 @@ int	*ft_fill_index(int ac, int *tab_int)
 {
 	int	i;
 
-	tab_int = malloc(sizeof(int) * ac)
+	tab_int = malloc(sizeof(int) * ac);
 	if (!tab_int)
-	{
-		free(tab_int);
 		return (NULL);
-	}
 	i = 0;
 	while (i < ac)
-		tab_index[i++] = ft_found_index(tab_int);
-	free(tab_int);
-	return (tab_index);
+	{
+		tab_int[i] = ft_found_index(tab_int, i, ac);
+		i++;
+	}
+	return (tab_int);
 }
+
+int	ft_found_index(int *tab, int i, int ac)
+{
+	int	j;
+	int	count;
+
+	j = 0;
+	count = 0;
+	while (j < ac)
+	{
+		if (tab[j] < tab[i])
+			count++;
+		j++;
+	}
+	return (count);
+}
+
+int	have_same_numbers(int ac, int *tab)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < ac)
+	{
+		j = 0;
+		while (j < ac)
+		{
+			if (tab[i] == tab[j] && i != j)
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
