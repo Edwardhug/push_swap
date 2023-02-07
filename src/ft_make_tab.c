@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:46:09 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/06 13:58:51 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/07 17:15:08 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ int	ft_fill_tab(int ac, char **av)
 	int		*tab_index;
 	int		*tab_int;
 
-	 if (ac == 2)
-	 	ac = ft_count_before_split(av);
 	tab_int = malloc(sizeof(int) * ac);
 	if (!tab_int)
 		return (1);
@@ -28,6 +26,9 @@ int	ft_fill_tab(int ac, char **av)
 		free (tab_int);
 		return (1);
 	}
+
+	// print the tab :
+	
 	int i;
 	i = 0;
 	while (tab_int[i])
@@ -35,6 +36,9 @@ int	ft_fill_tab(int ac, char **av)
 		ft_printf("%d \n", tab_index[i]);
 		i++;
 	}
+
+	// end of printer
+	
 	return (0);
 }
 
@@ -44,9 +48,11 @@ int	*ft_convert_to_index(int ac, char **av, int *tab_int)
 	int		*tab_index;
 	int		i;
 
-	if (ac <= 2)
+	if (ac == 2)
 	{
-		tab_char = ft_split(av[1], ' '); // need to protect the malloc
+		tab_char = ft_split(av[1], ' ');
+		if (!tab_char)
+			return (NULL);
 		ac = ft_count_ac(tab_char);
 	}
 	else
@@ -65,17 +71,18 @@ int	*ft_convert_to_index(int ac, char **av, int *tab_int)
 int	*ft_fill_index(int ac, int *tab_int)
 {
 	int	i;
+	int	*tab_index;
 
-	tab_int = malloc(sizeof(int) * ac);
-	if (!tab_int)
+	tab_index = malloc(sizeof(int) * ac);
+	if (!tab_index)
 		return (NULL);
 	i = 0;
 	while (i < ac)
 	{
-		tab_int[i] = ft_found_index(tab_int, i, ac);
+		tab_index[i] = ft_found_index(tab_int, i, ac);
 		i++;
 	}
-	return (tab_int);
+	return (tab_index);
 }
 
 int	ft_found_index(int *tab, int i, int ac)
@@ -84,7 +91,7 @@ int	ft_found_index(int *tab, int i, int ac)
 	int	count;
 
 	j = 0;
-	count = 0;
+	count = 1;
 	while (j < ac)
 	{
 		if (tab[j] < tab[i] && i != j && tab[j] != 0)
