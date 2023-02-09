@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:46:09 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/07 17:15:08 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/09 11:12:37 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	ft_fill_tab(int ac, char **av)
 	
 	int i;
 	i = 0;
-	while (tab_int[i])
+	while (i < ac)
 	{
 		ft_printf("%d \n", tab_index[i]);
 		i++;
@@ -56,7 +56,10 @@ int	*ft_convert_to_index(int ac, char **av, int *tab_int)
 		ac = ft_count_ac(tab_char);
 	}
 	else
+	{
 		tab_char = av + 1;
+		ac--;
+	}
 	i = -1;
 	while (tab_char[++i])
 		tab_int[i] = ft_atoi(tab_char[i]);
@@ -94,32 +97,10 @@ int	ft_found_index(int *tab, int i, int ac)
 	count = 1;
 	while (j < ac)
 	{
-		if (tab[j] < tab[i] && i != j && tab[j] != 0)
+		if (tab[j] < tab[i] && i != j)
 			count++;
 		j++;
 	}
 	return (count);
-}
-
-int	have_same_numbers(int ac, int *tab)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < ac)
-	{
-		j = 0;
-		while (j < ac)
-		{
-			if (tab[i] == tab[j] && i != j)
-			{
-				return (1);
-			}
-			j++;
-		}
-		i++;
-	}
-	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:06:56 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/01 16:35:06 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/09 10:27:30 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ int	have_no_number_charac(int ac, char **av)
 		j = 0;
 		while (av[i][j])
 		{
-			if ((av[i][j] < '0' || av[i][j] > '9') && av[i][j] != ' ')
+			if ((av[i][j] < '0' || av[i][j] > '9') && av[i][j] != ' '
+				&& av[i][j] != '-')
 				return (1);
 			j++;
 		}
@@ -52,6 +53,28 @@ int	have_space(char **av)
 	{
 		if (ft_strchr(av[i], ' ') != NULL)
 			return (1);
+		i++;
+	}
+	return (0);
+}
+
+int	have_same_numbers(int ac, int *tab)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < ac)
+	{
+		j = 0;
+		while (j < ac)
+		{
+			if (tab[i] == tab[j] && i != j)
+			{
+				return (1);
+			}
+			j++;
+		}
 		i++;
 	}
 	return (0);

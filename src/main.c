@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:13:06 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/07 17:03:56 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/08 10:37:07 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(int ac, char **av)
 	}
 	// ft_printf("%s\n", "yooooo");
 	a = ft_fill_tab(ac, av);
+	// ft_printf("%d\n", a);
 	if(a == 1)
 	{
 		write(2, "Error\n", 6);

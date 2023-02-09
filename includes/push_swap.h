@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:40:52 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/06 13:59:32 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/09 10:50:23 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ typedef struct s_stack
 	int				size;
 }				t_stack;
 
-int	have_error(int ac, char **av);
-int	have_no_number_charac(int ac, char **av);
-int	have_space(char **av);
-int	ft_fill_tab(int ac, char **av);
-int	*ft_convert_to_index(int ac, char **av, int *tab_int);
-int	*ft_fill_index(int ac, int *tab_int);
-int	ft_found_index(int *tab, int i, int ac);
-int	have_same_numbers(int ac, int *tab);
-int ft_count_ac(char **str);
-int ft_count_before_split(char **av);
+int		have_error(int ac, char **av);
+int		have_no_number_charac(int ac, char **av);
+int		have_space(char **av);
+int		ft_fill_tab(int ac, char **av);
+int		*ft_convert_to_index(int ac, char **av, int *tab_int);
+int		*ft_fill_index(int ac, int *tab_int);
+int		ft_found_index(int *tab, int i, int ac);
+int		have_same_numbers(int ac, int *tab);
+int 	ft_count_ac(char **str);
+int 	ft_count_before_split(char **av);
 
 #endif
