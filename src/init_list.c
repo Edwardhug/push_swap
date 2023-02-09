@@ -1,29 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   init_list.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/23 10:33:20 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/09 11:35:58 by lgabet           ###   ########.fr       */
+/*   Created: 2023/02/09 11:38:19 by lgabet            #+#    #+#             */
+/*   Updated: 2023/02/09 12:01:59 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "../includes/push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+t_stack	*ft_stacknew(int content, int size)
 {
-	t_list	*last;
+	t_stack	*list;
+
+	list = (t_stack *)malloc(sizeof(*list));
+	if (!list)
+		return (NULL);
+	list->num = content;
+    list->size = size;
+	list->next = (NULL);
+	return (list);
+}
+
+void	ft_stackadd_back(t_stack **lst, t_stack *new)
+{
+	t_stack	*last;
 
 	if (lst)
 	{
 		if (*lst)
 		{
-			last = ft_lstlast(*lst);
+			last = ft_stacklast(*lst);
 			last->next = new;
 		}
 		else
 			*lst = new;
 	}
+}
+
+t_stack	*ft_stacklast(t_stack *lst)
+{
+	if (!lst)
+		return (lst);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

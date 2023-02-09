@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:40:52 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/09 10:50:23 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/09 11:55:54 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,24 @@
 typedef struct s_stack
 {
 	int				num;
-	struct s_list	*next;
+	struct s_stack	*next;
 	int				size;
 }				t_stack;
 
 int		have_error(int ac, char **av);
 int		have_no_number_charac(int ac, char **av);
 int		have_space(char **av);
-int		ft_fill_tab(int ac, char **av);
+t_stack	*ft_fill_tab(int ac, char **av);
 int		*ft_convert_to_index(int ac, char **av, int *tab_int);
 int		*ft_fill_index(int ac, int *tab_int);
 int		ft_found_index(int *tab, int i, int ac);
 int		have_same_numbers(int ac, int *tab);
 int 	ft_count_ac(char **str);
-int 	ft_count_before_split(char **av);
+int 	ft_sizetab_int(int *tab);
+t_stack	*ft_from_tab_to_stack(int *tab);
+t_stack	*ft_stacknew(int content, int size);
+void	ft_stackadd_back(t_stack **lst, t_stack *new);
+t_stack	*ft_stacklast(t_stack *lst);
+//  int 	ft_count_before_split(char **av);
 
 #endif

@@ -6,36 +6,42 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:46:09 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/09 11:12:37 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/09 12:03:11 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_fill_tab(int ac, char **av)
+t_stack	*ft_fill_tab(int ac, char **av)
 {
 	int		*tab_index;
 	int		*tab_int;
+	t_stack	*stack;
 
 	tab_int = malloc(sizeof(int) * ac);
 	if (!tab_int)
-		return (1);
+		return (NULL);
 	tab_index = ft_convert_to_index(ac, av, tab_int);
 	if (!tab_index)
 	{
 		free (tab_int);
-		return (1);
+		return (NULL);
 	}
+	stack = ft_from_tab_to_stack(tab_index);
+	if (!stack)
+		return (NULL);
+	return (stack);
+
 
 	// print the tab :
 	
-	int i;
-	i = 0;
-	while (i < ac)
-	{
-		ft_printf("%d \n", tab_index[i]);
-		i++;
-	}
+	// int i;
+	// i = 0;
+	// while (i < ac)
+	// {
+	// 	ft_printf("%d \n", tab_index[i]);
+	// 	i++;
+	// }
 
 	// end of printer
 	
@@ -53,7 +59,7 @@ int	*ft_convert_to_index(int ac, char **av, int *tab_int)
 		tab_char = ft_split(av[1], ' ');
 		if (!tab_char)
 			return (NULL);
-		ac = ft_count_ac(tab_char);
+		ac = ft_count_ac(tab_char) + 1;
 	}
 	else
 	{
@@ -102,5 +108,25 @@ int	ft_found_index(int *tab, int i, int ac)
 		j++;
 	}
 	return (count);
+}
+
+t_stack	*ft_from_tab_to_stack(int *tab)
+{
+	t_stack	*stack;
+	t_stack	*tamp;
+	int		count;
+	int		i;
+
+	i = -1;
+	count = ft_sizetab_int(tab);
+	stack = NULL;
+	while (tab[++i])
+	{
+		tamp = ft_stacknew(tab[i], count);
+		if (!tamp)
+			return (NULL);
+		ft_stackadd_back(&stack, tamp);
+	}
+	return (stack);
 }
 
