@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:13:06 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/10 15:01:47 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/10 16:20:51 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int ac, char **av)
 	if (!a)
 		return (1);
 
-	ft_ss(a, b);
+	ft_pa(&b, a);
 	while (a)
 	{
 		ft_printf("%d\n", a->num);

@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 12:37:08 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/10 13:38:55 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/10 15:32:01 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,23 @@ int	ft_have_nothing_to_do(int ac, char **av)
 	}
 	free(str);
 	return (0);
+}
+
+void	ft_fill_size_stack(t_stack *stack)
+{
+	int		i;
+	t_stack	*start;
+
+	start = stack;
+	i = 0;
+	while (stack != NULL)
+	{
+		stack = stack->next;
+		i++;
+	}
+	while (start != NULL)
+	{
+		start->num = i;
+		start = start->next;
+	}
 }

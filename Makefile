@@ -6,7 +6,7 @@
 #    By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/31 10:38:36 by lgabet            #+#    #+#              #
-#    Updated: 2023/02/10 12:47:53 by lgabet           ###   ########.fr        #
+#    Updated: 2023/02/10 15:41:31 by lgabet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,9 @@ src/ft_error.c\
 src/ft_make_tab.c\
 src/ft_count_ac.c\
 src/init_list.c\
-src/ft_instruction.c\
-src/ft_stack_maker.c
+src/ft_stack_maker.c\
+src/ft_swap.c\
+src/ft_push.c
 
 INCLUDES = includes/push_swap.h
 OBJS= ${SRCS:.c=.o}
