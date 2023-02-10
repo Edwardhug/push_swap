@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 12:37:08 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/10 13:20:13 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/10 13:38:55 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,10 @@ int	ft_have_nothing_to_do(int ac, char **av)
 	if (!str)
 		return (1);
 	if (ac == 2 && ft_count_ac(str) == 1)
+	{
+		free(str);
 		return (1);
+	}
+	free(str);
 	return (0);
 }

@@ -6,25 +6,59 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 12:09:15 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/10 12:31:07 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/10 15:00:43 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_sa(t_stack **stack)
+void	ft_sa(t_stack *stack)
 {
 	t_stack	*node;
-	t_stack	*ad_stack;
 	int		tamp;
 
-	ad_stack = *stack;
-	if (ad_stack == NULL || ad_stack->size == 1)
+	if (stack == NULL || stack->size == 1)
 		return ;
-	node = ad_stack;
+	node = stack;
 	node = node->next;
-	tamp = ad_stack->num;
-	ad_stack->num = node->num;
+	tamp = stack->num;
+	stack->num = node->num;
 	node->num = tamp;
 	ft_printf("sa\n");
+}
+
+void	ft_sb(t_stack *stack)
+{
+	t_stack	*node;
+	int		tamp;
+
+	if (stack == NULL || stack->size == 1)
+		return ;
+	node = stack;
+	node = node->next;
+	tamp = stack->num;
+	stack->num = node->num;
+	node->num = tamp;
+	ft_printf("sb\n");
+}
+
+void	ft_ss(t_stack *stack_a, t_stack *stack_b)
+{
+	t_stack	*node;
+	int		tamp;
+
+	if (stack_a == NULL || stack_a->size == 1
+		|| stack_b == NULL || stack_b->size == 1)
+		return ;
+	node = stack_a;
+	node = node->next;
+	tamp = stack_a->num;
+	stack_a->num = node->num;
+	node->num = tamp;
+	node = stack_b;
+	node = node->next;
+	tamp = stack_b->num;
+	stack_b->num = node->num;
+	node->num = tamp;
+	ft_printf("ss\n");
 }
