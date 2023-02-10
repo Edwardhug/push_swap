@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:06:56 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/10 11:59:47 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/10 12:47:20 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int	have_error(int ac, char **av)
 {
-	if (ac == 1)
-		return (1);
-	else if (have_no_number_charac(ac, av) == 1)
+	if (have_no_number_charac(ac, av) == 1)
 		return (1);
 	else if (ac > 2 && have_space(av) == 1)
 		return (1);

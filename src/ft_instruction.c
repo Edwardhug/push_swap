@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_ac.c                                      :+:      :+:    :+:   */
+/*   ft_instruction.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 13:31:36 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/10 13:19:49 by lgabet           ###   ########.fr       */
+/*   Created: 2023/02/10 12:09:15 by lgabet            #+#    #+#             */
+/*   Updated: 2023/02/10 12:31:07 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int ft_count_ac(char **str)
+void	ft_sa(t_stack **stack)
 {
-    int i;
+	t_stack	*node;
+	t_stack	*ad_stack;
+	int		tamp;
 
-    i = 0;
-    while (str[i])
-        i++;
-    return (i);
-}
-
-int ft_sizetab_int(int *tab)
-{
-    int i;
-    
-    i = 0;
-    while (tab[i])
-        i++;
-    return (i);
+	ad_stack = *stack;
+	if (ad_stack == NULL || ad_stack->size == 1)
+		return ;
+	node = ad_stack;
+	node = node->next;
+	tamp = ad_stack->num;
+	ad_stack->num = node->num;
+	node->num = tamp;
+	ft_printf("sa\n");
 }
