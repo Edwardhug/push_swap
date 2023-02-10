@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:06:56 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/09 10:27:30 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/10 11:59:47 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,11 @@ int	have_no_number_charac(int ac, char **av)
 		j = 0;
 		while (av[i][j])
 		{
+			if ((av[i][j] == '-' || av[i][j] == '+')
+				&& (av[i][j + 1] < '0' || av[i][j + 1] > '9'))
+				return (1);
 			if ((av[i][j] < '0' || av[i][j] > '9') && av[i][j] != ' '
-				&& av[i][j] != '-')
+				&& av[i][j] != '-' && av[i][j] != '+')
 				return (1);
 			j++;
 		}
