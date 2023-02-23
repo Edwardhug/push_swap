@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:40:52 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/10 16:19:42 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/23 13:50:47 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int		*ft_convert_to_index(int ac, char **av, int *tab_int);
 int		*ft_fill_index(int ac, int *tab_int);
 int		ft_found_index(int *tab, int i, int ac);
 int		have_same_numbers(int ac, int *tab);
-int 	ft_count_ac(char **str);
-int 	ft_sizetab_int(int *tab);
+int		ft_count_ac(char **str);
+int		ft_sizetab_int(int *tab);
 t_stack	*ft_from_tab_to_stack(int *tab);
 t_stack	*ft_stacknew(int content, int size);
 void	ft_stackadd_back(t_stack **lst, t_stack *new);
@@ -43,8 +43,8 @@ int		ft_have_nothing_to_do(int ac, char **av);
 void	ft_sb(t_stack *stack);
 void	ft_ss(t_stack *stack_a, t_stack *stack_b);
 void	ft_fill_size_stack(t_stack *stack);
-void	ft_pa(t_stack **stack_a, t_stack *stack_b);
-void	ft_pb(t_stack **stack_a, t_stack *stack_b);
-
+int	    ft_pa(t_stack **stack_a, t_stack *stack_b);
+int	    ft_pb(t_stack **stack_a, t_stack **stack_b);
+void    ft_stackadd_front(t_stack **lst, t_stack *new);
 
 #endif
