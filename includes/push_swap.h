@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:40:52 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/23 17:44:58 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/23 18:25:09 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ int		ft_have_nothing_to_do(int ac, char **av);
 void	ft_sb(t_stack *stack);
 void	ft_ss(t_stack *stack_a, t_stack *stack_b);
 void	ft_fill_size_stack(t_stack *stack);
-int	    ft_pa(t_stack **stack_a, t_stack **stack_b);
-int	    ft_pb(t_stack **stack_a, t_stack **stack_b);
+void	ft_pa(t_stack **stack_a, t_stack **stack_b);
+void    ft_pb(t_stack **stack_a, t_stack **stack_b);
 void    ft_stackadd_front(t_stack **lst, t_stack *new);
+t_stack	*ft_last_node(t_stack *lst);
+void	ft_ra(t_stack **a);
 
 #endif

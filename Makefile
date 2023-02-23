@@ -6,7 +6,7 @@
 #    By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/31 10:38:36 by lgabet            #+#    #+#              #
-#    Updated: 2023/02/23 18:04:17 by lgabet           ###   ########.fr        #
+#    Updated: 2023/02/23 18:13:19 by lgabet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS	= src/main.c\
 src/ft_error.c\
 src/ft_make_tab.c\
 src/ft_count_ac.c\
-src/init_list.c\
+src/utils_list.c\
 src/ft_stack_maker.c\
 src/ft_swap.c\
 src/ft_push.c\

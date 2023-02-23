@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:13:06 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/23 18:10:01 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/23 18:25:35 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,19 @@
 int	main(int ac, char **av)
 {
 	t_stack	*a;
-	t_stack	*b;
+	// t_stack	*b;
 
 	a = NULL;
-	b = NULL;
+	// b = NULL;
 	a = ft_stack_maker(ac, av, a);
 	if (!a)
 		return (1);
-	// if (ft_pa(&a, &b))
-	// 	return (1);
-	// while (a)
-	// {
-	// 	ft_printf("%d\n", a->num);
-	// 	a = a->next;
-	// }
+	ft_ra(&a);
+	while (a)
+	{
+		ft_printf("%d\n", a->num);
+		a = a->next;
+	}
 	// while (b)
 	// {
 	// 	ft_printf("%d\n", b->num);
