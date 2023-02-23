@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:46:09 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/10 13:13:48 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/23 17:31:54 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,6 @@ t_stack	*ft_fill_tab(int ac, char **av)
 	if (!stack)
 		return (NULL);
 	return (stack);
-
-
-	// print the tab :
-	
-	// int i;
-	// i = 0;
-	// while (i < ac)
-	// {
-	// 	ft_printf("%d \n", tab_index[i]);
-	// 	i++;
-	// }
-
-	// end of printer
-	
-	return (0);
 }
 
 int	*ft_convert_to_index(int ac, char **av, int *tab_int)
@@ -129,4 +114,3 @@ t_stack	*ft_from_tab_to_stack(int *tab)
 	}
 	return (stack);
 }
-

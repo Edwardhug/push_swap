@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 12:37:08 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/23 14:00:15 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/23 17:33:06 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_stack	*ft_stack_maker(int ac, char **av, t_stack *a)
 		return (NULL);
 	}
 	a = ft_fill_tab(ac, av);
-	if(!a)
+	if (!a)
 	{
 		write(2, "Error\n", 6);
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 13:31:36 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/23 11:24:49 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/23 17:30:05 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_count_ac(char **str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i])
@@ -22,9 +22,9 @@ int	ft_count_ac(char **str)
 	return (i);
 }
 
-int ft_sizetab_int(int *tab)
+int	ft_sizetab_int(int *tab)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (tab[i])
