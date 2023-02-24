@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:38:19 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/23 18:27:22 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/24 13:36:31 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,10 @@ void	ft_stackadd_front(t_stack **lst, t_stack *new)
 	}
 }
 
-// t_stack	*ft_last_node(t_stack *lst)
-// {
-// 	while (lst->next)
-// 		lst = lst->next;
-// 	return (lst);
-// }
+int	ft_extract_last_num(t_stack *stack)
+{
+	t_stack	*last_node;
+
+	last_node = ft_stacklast(stack);
+	return (last_node->num);
+}

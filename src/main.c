@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:13:06 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/24 13:00:43 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/24 14:19:49 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
-	// (void) b;
+	(void) b;
 	a = ft_stack_maker(ac, av, a);
 	if (!a)
 		return (1);
-	ft_rr(&a, &b);
+	ft_rrr(&a, &b);
 	while (a)
 	{
 		ft_printf("%d\n", a->num);

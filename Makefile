@@ -6,7 +6,7 @@
 #    By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/31 10:38:36 by lgabet            #+#    #+#              #
-#    Updated: 2023/02/23 18:13:19 by lgabet           ###   ########.fr        #
+#    Updated: 2023/02/24 13:54:24 by lgabet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ src/utils_list.c\
 src/ft_stack_maker.c\
 src/ft_swap.c\
 src/ft_push.c\
-src/ft_rotate.c
+src/ft_rotate.c\
+src/ft_reverse_rotate.c
 
 INCLUDES = includes/push_swap.h
 OBJS= ${SRCS:.c=.o}
