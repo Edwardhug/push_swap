@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:40:52 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/23 18:25:09 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/02/24 12:49:56 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,8 @@ void    ft_pb(t_stack **stack_a, t_stack **stack_b);
 void    ft_stackadd_front(t_stack **lst, t_stack *new);
 t_stack	*ft_last_node(t_stack *lst);
 void	ft_ra(t_stack **a);
+void	ft_rb(t_stack **a);
+void	ft_reverse_without_print(t_stack **a);
+void	ft_rr(t_stack **a, t_stack **b);
 
 #endif
