@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:40:52 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/24 14:19:06 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/13 14:05:38 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "../libft/includes/ft_printf.h"
 # include "../libft/libft/includes/libft.h"
+# include <limits.h>
 
 typedef struct s_stack
 {
@@ -56,5 +57,7 @@ void 	ft_rra(t_stack **a);
 void 	ft_rrb(t_stack **a);
 void 	ft_reverse_rotate_without_print(t_stack **a);
 void	ft_rrr(t_stack **a, t_stack **b);
+int		ft_atoi_error(const char *cs);
+int		ft_convert_char_to_int(int i, char **tab_char, int **tab_int);
 
 #endif

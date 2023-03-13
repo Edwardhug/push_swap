@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:46:09 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/23 17:31:54 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/13 14:07:06 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,15 @@ int	*ft_convert_to_index(int ac, char **av, int *tab_int)
 		ac--;
 	}
 	i = -1;
-	while (tab_char[++i])
-		tab_int[i] = ft_atoi(tab_char[i]);
+	if (ft_convert_char_to_int(i, tab_char, &tab_int) == 1)
+		return (NULL);
+	
+	// while (tab_char[++i])
+	// {
+	// 	tab_int[i] = ft_atoi_error(tab_char[i]);
+	// 	if (tab_int[i] == 0 && ft_strlen(tab_char[i]) != 1)
+	// 		return (NULL);
+	// }
 	if (have_same_numbers(ac, tab_int))
 		return (NULL);
 	tab_index = ft_fill_index(ac, tab_int);

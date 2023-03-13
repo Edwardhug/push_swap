@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:06:56 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/10 12:47:20 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/13 13:54:38 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,32 @@ int	have_same_numbers(int ac, int *tab)
 		i++;
 	}
 	return (0);
+}
+
+int	ft_atoi_error(const char *cs)
+{
+	int					i;
+	int					a;
+	int		r;
+	char				*s;
+
+	s = (char *)cs;
+	i = ft_whitespace(s);
+	a = 1;
+	r = 0;
+	if (s[i] == '-' || s[i] == '+')
+	{	
+		if (s[i] == '-')
+			a = a * (-1);
+		i++;
+	}
+	while (s[i] >= '0' && s[i] <= '9')
+	{
+		if (r != ((r * 10 + (a * (s[i] - 48))) / 10))
+			return (0);
+		r = (s[i] - '0') + r * 10;
+		i++;
+	}
+	r = r * a;
+	return (r);
 }
