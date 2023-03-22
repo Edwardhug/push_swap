@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:40:52 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/13 14:05:38 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/22 14:27:31 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int		have_error(int ac, char **av);
 int		have_no_number_charac(int ac, char **av);
 int		have_space(char **av);
 t_stack	*ft_fill_tab(int ac, char **av);
-int		*ft_convert_to_index(int ac, char **av, int *tab_int);
+int		*ft_convert_to_index(int ac, char **av);
 int		*ft_fill_index(int ac, int *tab_int);
 int		ft_found_index(int *tab, int i, int ac);
 int		have_same_numbers(int ac, int *tab);
@@ -58,6 +58,7 @@ void 	ft_rrb(t_stack **a);
 void 	ft_reverse_rotate_without_print(t_stack **a);
 void	ft_rrr(t_stack **a, t_stack **b);
 int		ft_atoi_error(const char *cs);
-int		ft_convert_char_to_int(int i, char **tab_char, int **tab_int);
+int		*ft_convert_char_to_int(int i, char **tab_char, int *tab_int);
+char	*ft_join_every_arg(int ac, char **av);
 
 #endif

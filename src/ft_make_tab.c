@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:46:09 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/13 14:07:06 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/22 14:31:46 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,52 +15,41 @@
 t_stack	*ft_fill_tab(int ac, char **av)
 {
 	int		*tab_index;
-	int		*tab_int;
+	// int		*tab_int;
 	t_stack	*stack;
 
-	tab_int = malloc(sizeof(int) * ac);
-	if (!tab_int)
-		return (NULL);
-	tab_index = ft_convert_to_index(ac, av, tab_int);
+	// tab_int = malloc(sizeof(int) * ac);
+	// if (!tab_int)
+	// 	return (NULL);
+	tab_index = ft_convert_to_index(ac, av);
 	if (!tab_index)
-	{
-		free (tab_int);
 		return (NULL);
-	}
 	stack = ft_from_tab_to_stack(tab_index);
 	if (!stack)
 		return (NULL);
 	return (stack);
 }
 
-int	*ft_convert_to_index(int ac, char **av, int *tab_int)
+int	*ft_convert_to_index(int ac, char **av)
 {
 	char	**tab_char;
 	int		*tab_index;
 	int		i;
+	char	*av_join;
+	int		*tab_int;
 
-	if (ac == 2)
-	{
-		tab_char = ft_split(av[1], ' ');
-		if (!tab_char)
-			return (NULL);
-		ac = ft_count_ac(tab_char) + 1;
-	}
-	else
-	{
-		tab_char = av + 1;
-		ac--;
-	}
-	i = -1;
-	if (ft_convert_char_to_int(i, tab_char, &tab_int) == 1)
+	av_join = ft_join_every_arg(ac, av);
+	if (!av_join)
 		return (NULL);
-	
-	// while (tab_char[++i])
-	// {
-	// 	tab_int[i] = ft_atoi_error(tab_char[i]);
-	// 	if (tab_int[i] == 0 && ft_strlen(tab_char[i]) != 1)
-	// 		return (NULL);
-	// }
+	tab_char = ft_split(av_join, ' ');
+	ac = ft_count_ac(tab_char);
+	i = -1;
+	tab_int = malloc(sizeof(int) * (ft_count_ac(tab_char)));
+	if (!tab_int)
+		return (NULL);
+	tab_int = ft_convert_char_to_int(i, tab_char, tab_int);
+	if (!tab_int)
+		return (NULL);
 	if (have_same_numbers(ac, tab_int))
 		return (NULL);
 	tab_index = ft_fill_index(ac, tab_int);
