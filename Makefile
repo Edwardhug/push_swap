@@ -6,7 +6,7 @@
 #    By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/31 10:38:36 by lgabet            #+#    #+#              #
-#    Updated: 2023/03/13 14:02:03 by lgabet           ###   ########.fr        #
+#    Updated: 2023/03/22 14:36:50 by lgabet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ src/ft_swap.c\
 src/ft_push.c\
 src/ft_rotate.c\
 src/ft_reverse_rotate.c\
-src/ft_convert_char_to_int.c
+src/ft_convert_char_to_int.c\
+src/ft_check_order.c
 
 INCLUDES = includes/push_swap.h
 OBJS= ${SRCS:.c=.o}
