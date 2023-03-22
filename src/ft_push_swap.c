@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_push_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/31 19:13:06 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/22 14:59:48 by lgabet           ###   ########.fr       */
+/*   Created: 2023/03/22 14:51:43 by lgabet            #+#    #+#             */
+/*   Updated: 2023/03/22 15:01:11 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int ac, char **av)
+void	ft_push_swap(t_stack *a, t_stack *b)
 {
-	t_stack	*a;
-	t_stack	*b;
+	if (a->size <= 5)
+		ft_small_list(a, b);
+	// else
+		// ft_big_list(a, b);
+}
 
-	a = NULL;
-	b = NULL;
-	a = ft_stack_maker(ac, av, a);
-	if (!a)
-		return (1);
-	if (ft_is_ordered(a))
-		return (0);
-	ft_push_swap(a, b);
-	return (0);
+void	ft_small_list(t_stack *a, t_stack *b)
+{
+	if (a->size == 2)
+	{
+		(void)b;
+		if (!ft_is_ordered(a))
+			ft_sa(a);
+		return ;
+	}
 }
