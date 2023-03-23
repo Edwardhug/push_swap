@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:13:06 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/22 14:59:48 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/23 16:49:27 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,15 @@ int	main(int ac, char **av)
 		return (1);
 	if (ft_is_ordered(a))
 		return (0);
-	ft_push_swap(a, b);
+	ft_push_swap(&a, &b);
+	// (void)b;
+	// ft_ra(&a);
+	while (a)
+	{
+		ft_printf("%d ", a->num);
+		a = a->next;
+	}
+
+	
 	return (0);
 }
