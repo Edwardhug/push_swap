@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 14:51:43 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/24 14:11:01 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/24 16:44:39 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	ft_three_numbers(t_stack **a)
 
 	min = ft_get_min(*a);
 	max = ft_get_max(*a);
+	ft_printf("%d %d\n", min, max);
 	next = (*a)->next;
 	if ((*a)->num != min && next->num == max)
 		ft_rra(a);
@@ -59,6 +60,6 @@ void	ft_three_numbers(t_stack **a)
 		ft_sa(*a);
 		ft_ra(a);
 	}
-	else if ((*a)->num == !min && next->num == min)
+	else if ((*a)->num !=min && next->num == min)
 		ft_sa(*a);
 }
