@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 14:51:43 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/23 16:51:25 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/24 14:11:01 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,22 +39,26 @@ void	ft_small_list(t_stack **a, t_stack **b)
 void	ft_three_numbers(t_stack **a)
 {
 	t_stack	*next;
+	int		min;
+	int		max;
 
+	min = ft_get_min(*a);
+	max = ft_get_max(*a);
 	next = (*a)->next;
-	if ((*a)->num == 2 && next->num == 3)
+	if ((*a)->num != min && next->num == max)
 		ft_rra(a);
-	else if ((*a)->num == 3 && next->num == 2)
+	else if ((*a)->num == max && next->num != min)
 	{
 		ft_sa(*a);
 		ft_rra(a);
 	}
-	else if ((*a)->num == 3 && next->num == 1)
+	else if ((*a)->num == max && next->num == min)
 		ft_ra(a);
-	else if ((*a)->num == 1 && next->num == 3)
+	else if ((*a)->num == min && next->num == max)
 	{
 		ft_sa(*a);
 		ft_ra(a);
 	}
-	else if ((*a)->num == 2 && next->num == 1)
+	else if ((*a)->num == !min && next->num == min)
 		ft_sa(*a);
 }
