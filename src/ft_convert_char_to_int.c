@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 14:02:14 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/22 14:29:42 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/24 17:23:52 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	*ft_convert_char_to_int(int i, char **tab_char, int *tab_int)
 	while (tab_char[i])
 	{
 		tab_int[i] = ft_atoi_error(tab_char[i]);
+		ft_printf("%d\n", tab_int[i]);
 		if (tab_int[i] == 0 && ft_strlen(tab_char[i]) != 1)
 			return (NULL);
 		i++;
