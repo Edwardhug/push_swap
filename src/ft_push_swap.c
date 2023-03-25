@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 14:51:43 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/24 17:08:06 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/25 14:51:15 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,20 @@ void	ft_small_list(t_stack **a, t_stack **b)
 		ft_sa(*a);
 		return ;
 	}
-	if ((*a)->size == 3)
+	else if((*a)->size == 3)
 	{
 		(void)b;
 		ft_three_numbers(a);
 		return ;
 	}
-	if ((*a)->size == 4)
+	else if ((*a)->size == 4)
 	{
-		(void)b;
 		ft_four_numbers(a, b);
+		return ;
+	}
+	else if ((*a)->size == 5)
+	{
+		ft_five_numbers(a, b);
 		return ;
 	}
 }
@@ -87,5 +91,31 @@ void	ft_four_numbers(t_stack **a, t_stack **b)
 		return ;
 	ft_pb(a, b);
 	ft_three_numbers(a);
+	ft_pa(a, b);
+}
+
+void	ft_five_numbers(t_stack **a, t_stack **b)
+{
+	int distance;
+	
+	distance = ft_get_distance(*a, ft_get_min(*a));
+	if (distance == 1)
+		ft_sa(*a);
+	else if (distance == 2)
+	{
+		ft_ra(a);
+		ft_sa(*a);
+	}
+	else if (distance == 3)
+	{
+		ft_rra(a);
+		ft_rra(a);
+	}
+	else if (distance == 4)
+		ft_rra(a);
+	if (ft_is_ordered(*a))
+		return ;
+	ft_pb(a, b);
+	ft_four_numbers(a, b);
 	ft_pa(a, b);
 }

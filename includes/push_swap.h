@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:40:52 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/25 13:23:52 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/25 14:45:17 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,8 @@ int 	ft_get_min(t_stack *a);
 int		ft_get_max(t_stack *a);
 int		ft_get_distance(t_stack *a, int to_find);
 void	ft_four_numbers(t_stack **a, t_stack **b);
+void	ft_five_numbers(t_stack **a, t_stack **b);
+
+void	ft_print_list(t_stack *a);
 
 #endif
