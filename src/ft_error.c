@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:06:56 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/24 17:29:24 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/25 14:12:21 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,18 +81,16 @@ int	have_same_numbers(int ac, int *tab)
 	return (0);
 }
 
-int	ft_atoi_error(const char *cs)
+int	ft_atoi_error(char *s)
 {
-	int		i;
-	int		a;
-	int		r;
-	char	*s;
+	int			i;
+	int			a;
+	long int	r;
 
-	s = (char *)cs;
 	i = ft_whitespace(s);
 	a = 1;
 	r = 0;
-	if (s[i] == '-' || s[i] == '+')
+	while (s[i] == '-' || s[i] == '+')
 	{
 		if (s[i] == '-')
 			a = a * (-1);
@@ -100,13 +98,11 @@ int	ft_atoi_error(const char *cs)
 	}
 	while (s[i] >= '0' && s[i] <= '9')
 	{
-		ft_printf("%c\n", s[i]);
-		if (r != ((r * 10 + (a * (s[i] - 48))) / 10))
-			return (0);
-		ft_printf("salut\n");
 		r = (s[i] - '0') + r * 10;
 		i++;
 	}
 	r = r * a;
+	if (r < INT_MIN || r > INT_MAX)
+			return (0);
 	return (r);
 }

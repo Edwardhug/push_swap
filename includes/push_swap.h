@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:40:52 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/24 16:58:09 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/25 13:23:52 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void 	ft_rra(t_stack **a);
 void 	ft_rrb(t_stack **a);
 void 	ft_reverse_rotate_without_print(t_stack **a);
 void	ft_rrr(t_stack **a, t_stack **b);
-int		ft_atoi_error(const char *cs);
+int		ft_atoi_error(char *s);
 int		*ft_convert_char_to_int(int i, char **tab_char, int *tab_int);
 char	*ft_join_every_arg(int ac, char **av);
 int		ft_is_ordered(t_stack *a);
