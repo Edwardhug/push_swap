@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 14:51:43 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/28 22:59:07 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/28 23:52:12 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ void	ft_push_swap(t_stack **a, t_stack **b)
 	// ft_printf("%d\n", size);
 	if (size <= 5)
 		ft_small_list(a, b);
-	// else
-	// 	ft_radix(a, b);
+	else
+		ft_radix(a, b);
 }
 
 void	ft_small_list(t_stack **a, t_stack **b)
