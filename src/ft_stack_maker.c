@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 12:37:08 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/28 15:24:43 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/28 15:31:16 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int	ft_get_size_stack(t_stack *stack)
 {
 	int		i;
 
+	i = 0;
 	while (stack)
 	{
 		stack = stack->next;
