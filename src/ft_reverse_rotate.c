@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 13:04:45 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/24 14:18:22 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/28 15:11:16 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@ void ft_rra(t_stack **a)
 	int	tamp_a;
 	int tamp_b;
 	t_stack	*stack;
+	int size;
 
-	if (!(*a) || (*a)->size <= 1)
+	size = ft_get_size_stack(*a);
+
+	if (!(*a) || size <= 1)
 		return ;
 	last_num = ft_extract_last_num(*a);
 	stack = *a;
@@ -41,8 +44,10 @@ void ft_rrb(t_stack **a)
 	int	tamp_a;
 	int tamp_b;
 	t_stack	*stack;
+	int size;
 
-	if (!(*a) || (*a)->size <= 1)
+	size = ft_get_size_stack(*a);
+	if (!(*a) || size <= 1)
 		return ;
 	last_num = ft_extract_last_num(*a);
 	stack = *a;
@@ -64,8 +69,11 @@ void ft_reverse_rotate_without_print(t_stack **a)
 	int	tamp_a;
 	int tamp_b;
 	t_stack	*stack;
+	int size;
 
-	if (!(*a) || (*a)->size <= 1)
+	size = ft_get_size_stack(*a);
+
+	if (!(*a) || size <= 1)
 		return ;
 	last_num = ft_extract_last_num(*a);
 	stack = *a;

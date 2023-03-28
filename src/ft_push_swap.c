@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 14:51:43 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/25 17:06:47 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/28 15:23:57 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,39 @@
 
 void	ft_push_swap(t_stack **a, t_stack **b)
 {
-	if ((*a)->size <= 5)
+	int size;
+
+	size = ft_get_size_stack(*a);
+	ft_printf("%d\n", size);
+	if (size <= 5)
 		ft_small_list(a, b);
-	else
-		ft_radix(a, b);
+	// else
+	// 	ft_radix(a, b);
 }
 
 void	ft_small_list(t_stack **a, t_stack **b)
 {
-	if ((*a)->size == 2)
+	int size;
+
+	size = ft_get_size_stack(*a);
+	if (size == 2)
 	{
 		(void)b;
 		ft_sa(*a);
 		return ;
 	}
-	else if((*a)->size == 3)
+	else if(size == 3)
 	{
 		(void)b;
 		ft_three_numbers(a);
 		return ;
 	}
-	else if ((*a)->size == 4)
+	else if (size == 4)
 	{
 		ft_four_numbers(a, b);
 		return ;
 	}
-	else if ((*a)->size == 5)
+	else if (size == 5)
 	{
 		ft_five_numbers(a, b);
 		return ;

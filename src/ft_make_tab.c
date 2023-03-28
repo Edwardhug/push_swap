@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:46:09 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/24 17:20:46 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/28 15:16:59 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,9 @@ int	*ft_convert_to_index(int ac, char **av)
 	tab_index = ft_fill_index(ac, tab_int);
 	if (!tab_index)
 		return (NULL);
+	// free(av_join);
+	free(tab_int);
+	ft_free_tab_char(tab_char);
 	return (tab_index);
 }
 
@@ -95,15 +98,14 @@ t_stack	*ft_from_tab_to_stack(int *tab)
 {
 	t_stack	*stack;
 	t_stack	*tamp;
-	int		count;
 	int		i;
 
 	i = -1;
-	count = ft_sizetab_int(tab);
+	// count = ft_sizetab_int(tab);
 	stack = NULL;
 	while (tab[++i])
 	{
-		tamp = ft_stacknew(tab[i], count);
+		tamp = ft_stacknew(tab[i]);
 		if (!tamp)
 			return (NULL);
 		ft_stackadd_back(&stack, tamp);

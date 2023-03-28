@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 15:39:34 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/23 16:44:02 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/28 15:19:00 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ void	ft_sa(t_stack *stack)
 {
 	t_stack	*node;
 	int		tamp;
+	int 	size;
 
-	if (stack == NULL || stack->size == 1)
+	size = ft_get_size_stack(stack);
+	if (stack == NULL || size == 1)
 		return ;
 	node = stack;
 	node = node->next;
@@ -31,8 +33,10 @@ void	ft_sb(t_stack *stack)
 {
 	t_stack	*node;
 	int		tamp;
+	int 	size;
 
-	if (stack == NULL || stack->size == 1)
+	size = ft_get_size_stack(stack);
+	if (stack == NULL || size == 1)
 		return ;
 	node = stack;
 	node = node->next;
@@ -46,9 +50,13 @@ void	ft_ss(t_stack *stack_a, t_stack *stack_b)
 {
 	t_stack	*node;
 	int		tamp;
+	int 	size_a;
+	int 	size_b;
 
-	if (stack_a == NULL || stack_a->size == 1
-		|| stack_b == NULL || stack_b->size == 1)
+	size_b = ft_get_size_stack(stack_a);
+	size_a = ft_get_size_stack(stack_b);
+	if (stack_a == NULL || size_a == 1
+		|| stack_b == NULL || size_b == 1)
 		return ;
 	node = stack_a;
 	node = node->next;

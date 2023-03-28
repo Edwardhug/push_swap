@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:40:52 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/25 17:05:47 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/28 15:17:52 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ typedef struct s_stack
 {
 	int				num;
 	struct s_stack	*next;
-	int				size;
 }				t_stack;
 
 int		have_error(int ac, char **av);
@@ -33,9 +32,9 @@ int		*ft_fill_index(int ac, int *tab_int);
 int		ft_found_index(int *tab, int i, int ac);
 int		have_same_numbers(int ac, int *tab);
 int		ft_count_ac(char **str);
-int		ft_sizetab_int(int *tab);
+// int		ft_sizetab_int(int *tab);
 t_stack	*ft_from_tab_to_stack(int *tab);
-t_stack	*ft_stacknew(int content, int size);
+t_stack	*ft_stacknew(int content);
 void	ft_stackadd_back(t_stack **lst, t_stack *new);
 t_stack	*ft_stacklast(t_stack *lst);
 void	ft_sa(t_stack *stack);
@@ -43,7 +42,7 @@ t_stack	*ft_stack_maker(int ac, char **av, t_stack *a);
 int		ft_have_nothing_to_do(int ac, char **av);
 void	ft_sb(t_stack *stack);
 void	ft_ss(t_stack *stack_a, t_stack *stack_b);
-void	ft_fill_size_stack(t_stack *stack);
+int	ft_get_size_stack(t_stack *stack);
 void	ft_pa(t_stack **stack_a, t_stack **stack_b);
 void    ft_pb(t_stack **stack_a, t_stack **stack_b);
 void    ft_stackadd_front(t_stack **lst, t_stack *new);
@@ -71,6 +70,8 @@ void	ft_four_numbers(t_stack **a, t_stack **b);
 void	ft_five_numbers(t_stack **a, t_stack **b);
 int		ft_get_number_of_bits(t_stack *a);
 void	ft_radix(t_stack **a, t_stack **b);
+void	ft_free_list(t_stack *a);
+void	ft_free_tab_char(char **str);
 
 void	ft_print_list(t_stack *a);
 

@@ -6,13 +6,13 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:38:19 by lgabet            #+#    #+#             */
-/*   Updated: 2023/02/24 13:36:31 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/28 15:25:40 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-t_stack	*ft_stacknew(int content, int size)
+t_stack	*ft_stacknew(int content)
 {
 	t_stack	*list;
 
@@ -20,8 +20,7 @@ t_stack	*ft_stacknew(int content, int size)
 	if (!list)
 		return (NULL);
 	list->num = content;
-	list->size = size;
-	list->next = (NULL);
+	list->next = NULL;
 	return (list);
 }
 

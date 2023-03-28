@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 12:37:08 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/24 17:19:19 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/28 15:24:43 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack	*ft_stack_maker(int ac, char **av, t_stack *a)
 {
-	if (ft_have_nothing_to_do(ac, av) == 1)
+	if (ac == 1 || ac == 2)
 		return (NULL);
 	if (have_error(ac, av) == 1)
 	{
@@ -30,11 +30,11 @@ t_stack	*ft_stack_maker(int ac, char **av, t_stack *a)
 	return (a);
 }
 
-int	ft_have_nothing_to_do(int ac, char **av)
+int	ft_have_nothing_to_do(int ac, char **av) // don't know the aim of this fonction, used line 17
 {
 	char	**str;
 
-	if (ac == 1)
+	if (ac == 1 || ac == 2)
 		return (1);
 	str = ft_split(av[1], ' ');
 	if (!str)
@@ -48,21 +48,14 @@ int	ft_have_nothing_to_do(int ac, char **av)
 	return (0);
 }
 
-void	ft_fill_size_stack(t_stack *stack)
+int	ft_get_size_stack(t_stack *stack)
 {
 	int		i;
-	t_stack	*start;
 
-	start = stack;
-	i = 0;
-	while (stack != NULL)
+	while (stack)
 	{
 		stack = stack->next;
 		i++;
 	}
-	while (start != NULL)
-	{
-		start->size = i;
-		start = start->next;
-	}
+	return (i);
 }
