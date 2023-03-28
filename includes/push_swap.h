@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:40:52 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/28 16:48:37 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/28 22:56:11 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	ft_five_numbers(t_stack **a, t_stack **b);
 void	ft_radix(t_stack **a, t_stack **b);
 void	ft_free_list(t_stack *a);
 void	ft_free_tab_char(char **str);
-int		ft_is_first(t_stack *a, int num);
+// int		ft_is_first(t_stack *a, int num);
 
 void	ft_print_list(t_stack *a);
 
