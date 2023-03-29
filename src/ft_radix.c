@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 16:58:23 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/29 11:01:09 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 20:23:13 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_radix(t_stack **a, t_stack **b)
 {
 	int	i;
-	int size;
+	int	size;
 	int	j;
 
 	size = ft_get_size_stack(*a);

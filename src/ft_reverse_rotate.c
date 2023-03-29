@@ -6,22 +6,21 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 13:04:45 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/28 15:11:16 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 20:25:40 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void ft_rra(t_stack **a)
+void	ft_rra(t_stack **a)
 {
-	int	last_num;
-	int	tamp_a;
-	int tamp_b;
+	int		last_num;
+	int		tamp_a;
+	int		tamp_b;
 	t_stack	*stack;
-	int size;
+	int		size;
 
 	size = ft_get_size_stack(*a);
-
 	if (!(*a) || size <= 1)
 		return ;
 	last_num = ft_extract_last_num(*a);
@@ -38,13 +37,13 @@ void ft_rra(t_stack **a)
 	ft_printf("rra\n");
 }
 
-void ft_rrb(t_stack **a)
+void	ft_rrb(t_stack **a)
 {
-	int	last_num;
-	int	tamp_a;
-	int tamp_b;
+	int		last_num;
+	int		tamp_a;
+	int		tamp_b;
 	t_stack	*stack;
-	int size;
+	int		size;
 
 	size = ft_get_size_stack(*a);
 	if (!(*a) || size <= 1)
@@ -63,16 +62,15 @@ void ft_rrb(t_stack **a)
 	ft_printf("rrb\n");
 }
 
-void ft_reverse_rotate_without_print(t_stack **a)
+void	ft_reverse_rotate_without_print(t_stack **a)
 {
-	int	last_num;
-	int	tamp_a;
-	int tamp_b;
+	int		last_num;
+	int		tamp_a;
+	int		tamp_b;
 	t_stack	*stack;
-	int size;
+	int		size;
 
 	size = ft_get_size_stack(*a);
-
 	if (!(*a) || size <= 1)
 		return ;
 	last_num = ft_extract_last_num(*a);

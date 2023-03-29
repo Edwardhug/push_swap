@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 14:51:43 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/28 23:52:12 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 20:19:54 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 void	ft_push_swap(t_stack **a, t_stack **b)
 {
-	int size;
+	int	size;
 
 	size = ft_get_size_stack(*a);
-	// ft_printf("%d\n", size);
 	if (size <= 5)
 		ft_small_list(a, b);
 	else
@@ -26,7 +25,7 @@ void	ft_push_swap(t_stack **a, t_stack **b)
 
 void	ft_small_list(t_stack **a, t_stack **b)
 {
-	int size;
+	int	size;
 
 	size = ft_get_size_stack(*a);
 	if (size == 2)
@@ -35,7 +34,7 @@ void	ft_small_list(t_stack **a, t_stack **b)
 		ft_sa(*a);
 		return ;
 	}
-	else if(size == 3)
+	else if (size == 3)
 	{
 		(void)b;
 		ft_three_numbers(a);
@@ -76,14 +75,14 @@ void	ft_three_numbers(t_stack **a)
 		ft_sa(*a);
 		ft_ra(a);
 	}
-	else if ((*a)->num !=min && next->num == min)
+	else if ((*a)->num != min && next->num == min)
 		ft_sa(*a);
 }
 
 void	ft_four_numbers(t_stack **a, t_stack **b)
 {
-	int distance;
-	
+	int	distance;
+
 	distance = ft_get_distance(*a, ft_get_min(*a));
 	if (distance == 1)
 		ft_sa(*a);
@@ -103,8 +102,8 @@ void	ft_four_numbers(t_stack **a, t_stack **b)
 
 void	ft_five_numbers(t_stack **a, t_stack **b)
 {
-	int distance;
-	
+	int	distance;
+
 	distance = ft_get_distance(*a, ft_get_min(*a));
 	if (distance == 1)
 		ft_sa(*a);

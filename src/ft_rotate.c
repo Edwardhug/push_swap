@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 18:04:23 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/29 12:08:47 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 20:22:31 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	ft_ra(t_stack **a)
 {
 	t_stack	*new_last;
-	t_stack *head;
-	int size;
+	t_stack	*head;
+	int		size;
 
 	head = *a;
 	size = ft_get_size_stack(*a);
@@ -26,7 +26,7 @@ void	ft_ra(t_stack **a)
 	if (!new_last)
 		return ;
 	ft_stackadd_back(a, new_last);
-	*a = (*a)->next;	// may have some leaks because first node didn't free
+	*a = (*a)->next;
 	free(head);
 	ft_printf("ra\n");
 }
@@ -34,8 +34,8 @@ void	ft_ra(t_stack **a)
 void	ft_rb(t_stack **a)
 {
 	t_stack	*new_last;
-	t_stack *head;
-	int size;
+	t_stack	*head;
+	int		size;
 
 	head = *a;
 	size = ft_get_size_stack(*a);
@@ -45,7 +45,7 @@ void	ft_rb(t_stack **a)
 	if (!new_last)
 		return ;
 	ft_stackadd_back(a, new_last);
-	*a = (*a)->next;	// may have some leaks because first node didn't free
+	*a = (*a)->next;
 	free(head);
 	ft_printf("rb\n");
 }
@@ -53,8 +53,8 @@ void	ft_rb(t_stack **a)
 void	ft_reverse_without_print(t_stack **a)
 {
 	t_stack	*new_last;
-	t_stack *head;
-	int size;
+	t_stack	*head;
+	int		size;
 
 	head = *a;
 	size = ft_get_size_stack(*a);
@@ -65,7 +65,7 @@ void	ft_reverse_without_print(t_stack **a)
 		return ;
 	ft_stackadd_back(a, new_last);
 	free(head);
-	*a = (*a)->next;	// may have some leaks because first node didn't free
+	*a = (*a)->next;
 }
 
 void	ft_rr(t_stack **a, t_stack **b)

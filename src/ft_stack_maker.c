@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 12:37:08 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/29 11:11:51 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 20:16:24 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_stack	*ft_stack_maker(int ac, char **av, t_stack *a)
 	return (a);
 }
 
-int	ft_have_nothing_to_do(int ac, char **av) // don't know the aim of this fonction, used line 17
+int	ft_have_nothing_to_do(int ac, char **av)
 {
 	char	**str;
 

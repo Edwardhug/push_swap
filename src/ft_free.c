@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 14:18:38 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/28 14:55:25 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 20:23:32 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_free_list(t_stack *a)
 void	ft_free_tab_char(char **str)
 {
 	int	i;
-	
+
 	i = 0;
 	while (str[i])
 	{

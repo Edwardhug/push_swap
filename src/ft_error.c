@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:06:56 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/29 12:54:31 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 20:17:54 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	have_no_number_charac(int ac, char **av)
 				&& (av[i][j + 1] < '0' || av[i][j + 1] > '9'))
 				return (1);
 			if ((av[i][j] < '0' || av[i][j] > '9') && av[i][j] != ' '
-				&& av[i][j] != '-' && av[i][j] != '+')	
+				&& av[i][j] != '-' && av[i][j] != '+')
 				return (1);
 			j++;
 		}
@@ -108,6 +108,6 @@ int	ft_atoi_error(char *s)
 	}
 	r = r * a;
 	if (r < INT_MIN || r > INT_MAX)
-			return (0);
+		return (0);
 	return (r);
 }
