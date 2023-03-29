@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 14:51:43 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/29 20:19:54 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 21:14:39 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,27 +55,29 @@ void	ft_small_list(t_stack **a, t_stack **b)
 void	ft_three_numbers(t_stack **a)
 {
 	t_stack	*next;
-	int		min;
 	int		max;
 
-	min = ft_get_min(*a);
 	max = ft_get_max(*a);
 	next = (*a)->next;
-	if ((*a)->num != min && next->num == max)
+	if ((*a)->num != ft_get_min(*a) && next->num == max)
 		ft_rra(a);
-	else if ((*a)->num == max && next->num != min)
+	else if ((*a)->num == max && next->num != ft_get_min(*a))
 	{
 		ft_sa(*a);
 		ft_rra(a);
 	}
-	else if ((*a)->num == max && next->num == min)
-		ft_ra(a);
-	else if ((*a)->num == min && next->num == max)
+	else if ((*a)->num == max && next->num == ft_get_min(*a))
+	{
+		if (ft_ra(a) == 1)
+			return ;
+	}
+	else if ((*a)->num == ft_get_min(*a) && next->num == max)
 	{
 		ft_sa(*a);
-		ft_ra(a);
+		if (ft_ra(a) == 1)
+			return ;
 	}
-	else if ((*a)->num != min && next->num == min)
+	else if ((*a)->num != ft_get_min(*a) && next->num == ft_get_min(*a))
 		ft_sa(*a);
 }
 
@@ -88,7 +90,8 @@ void	ft_four_numbers(t_stack **a, t_stack **b)
 		ft_sa(*a);
 	else if (distance == 2)
 	{
-		ft_ra(a);
+		if (ft_ra(a) == 1)
+			return ;
 		ft_sa(*a);
 	}
 	else if (distance == 3)
@@ -109,7 +112,8 @@ void	ft_five_numbers(t_stack **a, t_stack **b)
 		ft_sa(*a);
 	else if (distance == 2)
 	{
-		ft_ra(a);
+		if (ft_ra(a) == 1)
+			return ;
 		ft_sa(*a);
 	}
 	else if (distance == 3)

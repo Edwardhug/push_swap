@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 16:58:23 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/29 20:23:13 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 21:06:40 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,10 @@ void	ft_radix(t_stack **a, t_stack **b)
 		while (j < size)
 		{
 			if ((((*a)->num >> i) & 1) == 1)
-				ft_ra(a);
+			{
+				if (ft_ra(a) == 1)
+					return ;
+			}
 			else
 				ft_pb(a, b);
 			j++;

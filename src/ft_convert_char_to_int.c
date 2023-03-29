@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 14:02:14 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/29 20:21:25 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 20:53:51 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int	*ft_convert_char_to_int(int i, char **tab_char, int *tab_int)
 		}
 		i++;
 	}
+	ft_free_tab_char(tab_char);
 	return (tab_int);
 }
 

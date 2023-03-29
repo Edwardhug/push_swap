@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:01:46 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/13 13:47:42 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 20:45:40 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int	ft_whitespace(char *str)
 
 int	ft_atoi(const char *cs)
 {
-	int					i;
-	int					a;
+	int		i;
+	int		a;
 	int		r;
-	char				*s;
+	char	*s;
 
 	s = (char *)cs;
 	i = ft_whitespace(s);

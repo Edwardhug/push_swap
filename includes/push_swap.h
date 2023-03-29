@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:40:52 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/29 11:44:54 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 21:05:42 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int		*ft_fill_index(int ac, int *tab_int);
 int		ft_found_index(int *tab, int i, int ac);
 int		have_same_numbers(int ac, int *tab);
 int		ft_count_ac(char **str);
-// int		ft_sizetab_int(int *tab);
 t_stack	*ft_from_tab_to_stack(int *tab);
 t_stack	*ft_stacknew(int content);
 void	ft_stackadd_back(t_stack **lst, t_stack *new);
@@ -42,19 +41,19 @@ t_stack	*ft_stack_maker(int ac, char **av, t_stack *a);
 int		ft_have_nothing_to_do(int ac, char **av);
 void	ft_sb(t_stack *stack);
 void	ft_ss(t_stack *stack_a, t_stack *stack_b);
-int	ft_get_size_stack(t_stack *stack);
+int		ft_get_size_stack(t_stack *stack);
 void	ft_pa(t_stack **stack_a, t_stack **stack_b);
-void    ft_pb(t_stack **stack_a, t_stack **stack_b);
-void    ft_stackadd_front(t_stack **lst, t_stack *new);
+void	ft_pb(t_stack **stack_a, t_stack **stack_b);
+void	ft_stackadd_front(t_stack **lst, t_stack *new);
 t_stack	*ft_last_node(t_stack *lst);
-void	ft_ra(t_stack **a);
-void	ft_rb(t_stack **a);
-void	ft_reverse_without_print(t_stack **a);
-void	ft_rr(t_stack **a, t_stack **b);
+int		ft_ra(t_stack **a);
+int		ft_rb(t_stack **a);
+int		ft_reverse_without_print(t_stack **a);
+int		ft_rr(t_stack **a, t_stack **b);
 int		ft_extract_last_num(t_stack *stack);
-void 	ft_rra(t_stack **a);
-void 	ft_rrb(t_stack **a);
-void 	ft_reverse_rotate_without_print(t_stack **a);
+void	ft_rra(t_stack **a);
+void	ft_rrb(t_stack **a);
+void	ft_reverse_rotate_without_print(t_stack **a);
 void	ft_rrr(t_stack **a, t_stack **b);
 int		ft_atoi_error(char *s);
 int		*ft_convert_char_to_int(int i, char **tab_char, int *tab_int);
@@ -63,18 +62,17 @@ int		ft_is_ordered(t_stack *a);
 void	ft_push_swap(t_stack **a, t_stack **b);
 void	ft_small_list(t_stack **a, t_stack **b);
 void	ft_three_numbers(t_stack **a);
-int 	ft_get_min(t_stack *a);
+int		ft_get_min(t_stack *a);
 int		ft_get_max(t_stack *a);
 int		ft_get_distance(t_stack *a, int to_find);
 void	ft_four_numbers(t_stack **a, t_stack **b);
 void	ft_five_numbers(t_stack **a, t_stack **b);
-// int		ft_get_number_of_bits(t_stack *a);
 void	ft_radix(t_stack **a, t_stack **b);
 void	ft_free_list(t_stack *a);
 void	ft_free_tab_char(char **str);
 char	*ft_strjoin_free(char *s1, char *s2);
 int		ft_strlen_error(char *str);
-// int		ft_is_first(t_stack *a, int num);
+char	**ft_make_tab_char(int ac, char **av);
 
 void	ft_print_list(t_stack *a);
 

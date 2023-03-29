@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:46:09 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/29 12:46:22 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 20:55:03 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,12 @@
 t_stack	*ft_fill_tab(int ac, char **av)
 {
 	int		*tab_index;
-	// int		*tab_int;
 	t_stack	*stack;
 
-	// tab_int = malloc(sizeof(int) * ac);
-	// if (!tab_int)
-	// 	return (NULL);
 	tab_index = ft_convert_to_index(ac, av);
 	if (!tab_index)
 		return (NULL);
-	// int i = 0;
-	// while ((tab_index[i]))
-	// {
-	// 	ft_printf("%d ", tab_index[i]);
-	// 	i++;
-	// }
-	// ft_printf("\n");
-
-
-		
 	stack = ft_from_tab_to_stack(tab_index);
-	if (!stack)
-		return (NULL);
 	free(tab_index);
 	return (stack);
 }
@@ -46,29 +30,27 @@ int	*ft_convert_to_index(int ac, char **av)
 	char	**tab_char;
 	int		*tab_index;
 	int		i;
-	char	*av_join;
 	int		*tab_int;
 
-	av_join = ft_join_every_arg(ac, av);
-	if (!av_join)
+	tab_char = ft_make_tab_char(ac, av);
+	if (!tab_char)
 		return (NULL);
-	tab_char = ft_split(av_join, ' ');
-	free(av_join);
 	ac = ft_count_ac(tab_char);
 	i = -1;
 	tab_int = malloc(sizeof(int) * (ft_count_ac(tab_char)));
 	if (!tab_int)
+	{
+		ft_free_tab_char(tab_char);
 		return (NULL);
+	}
 	tab_int = ft_convert_char_to_int(i, tab_char, tab_int);
 	if (!tab_int)
 		return (NULL);
-	ft_free_tab_char(tab_char);
 	if (have_same_numbers(ac, tab_int))
 		return (NULL);
 	tab_index = ft_fill_index(ac, tab_int);
 	if (!tab_index)
 		return (NULL);
-	free(tab_int);
 	return (tab_index);
 }
 
@@ -80,7 +62,7 @@ int	*ft_fill_index(int ac, int *tab_int)
 	tab_index = malloc(sizeof(int) * (ac + 1));
 	if (!tab_index)
 	{
-		free(tab_int);	
+		free(tab_int);
 		return (NULL);
 	}
 	i = 0;
@@ -90,6 +72,7 @@ int	*ft_fill_index(int ac, int *tab_int)
 		i++;
 	}
 	tab_index[i] = 0;
+	free(tab_int);
 	return (tab_index);
 }
 
@@ -116,7 +99,6 @@ t_stack	*ft_from_tab_to_stack(int *tab)
 	int		i;
 
 	i = -1;
-	// count = ft_sizetab_int(tab);
 	stack = NULL;
 	while (tab[++i])
 	{
