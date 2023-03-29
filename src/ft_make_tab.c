@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:46:09 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/28 22:58:48 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 11:39:44 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int	*ft_convert_to_index(int ac, char **av)
 	if (!av_join)
 		return (NULL);
 	tab_char = ft_split(av_join, ' ');
+	free(av_join);
 	
 	ac = ft_count_ac(tab_char);
 	i = -1;
@@ -62,17 +63,13 @@ int	*ft_convert_to_index(int ac, char **av)
 	tab_int = ft_convert_char_to_int(i, tab_char, tab_int);
 	if (!tab_int)
 		return (NULL);
+	ft_free_tab_char(tab_char);
 	if (have_same_numbers(ac, tab_int))
 		return (NULL);
 	tab_index = ft_fill_index(ac, tab_int);
 	if (!tab_index)
 		return (NULL);
-	
-
-	
-	free(av_join);
 	free(tab_int);
-	ft_free_tab_char(tab_char);
 	return (tab_index);
 }
 
@@ -90,6 +87,7 @@ int	*ft_fill_index(int ac, int *tab_int)
 		tab_index[i] = ft_found_index(tab_int, i, ac);
 		i++;
 	}
+	tab_index[i] = 0;
 	return (tab_index);
 }
 

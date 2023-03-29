@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 14:02:14 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/28 22:58:06 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 11:43:17 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,11 @@ char	*ft_join_every_arg(int ac, char **av)
 	char	*tab;
 	int		i;
 
-	tab = malloc(sizeof(char));
-	tab[0] = '\0';
+	tab = NULL;
 	i = 1;
 	while (i < ac)
 	{
-		tab = ft_strjoin(tab, av[i]);
+		tab = ft_strjoin_free(tab, av[i]);
 		if (!tab)
 		{
 			free(tab);
@@ -52,14 +51,41 @@ char	*ft_join_every_arg(int ac, char **av)
 	return (tab);
 }
 
-// int	ft_strlen_error(char *str)
-// {
-// 	int	i;
+char	*ft_strjoin_free(char *s1, char *s2)
+{
+	int		size1;
+	int		size2;
+	char	*str;
+	int		i;
+	int		j;
 
-// 	if (!str)
-// 		return (0);
-// 	i = 0;
-// 	while (str[i] != '\0')
-// 		i++;
-// 	return (i);
-// }
+	size1 = ft_strlen_error(s1);
+	size2 = ft_strlen_error(s2);
+	str = malloc(sizeof(char) * (size1 + size2 + 1));
+	if (!str)
+	{
+		free(s1);
+		return (NULL);
+	}
+	i = -1;
+	j = 0;
+	while (++i < size1)
+		str[i] = s1[i];
+	while (j < size2)
+		str[i++] = s2[j++];
+	str[size1 + size2] = 0;
+	free(s1);
+	return (str);
+}
+
+int	ft_strlen_error(char *str)
+{
+	int	i;
+
+	if (!str)
+		return (0);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
