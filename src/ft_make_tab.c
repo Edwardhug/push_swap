@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:46:09 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/29 11:39:44 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 12:46:22 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ int	*ft_convert_to_index(int ac, char **av)
 		return (NULL);
 	tab_char = ft_split(av_join, ' ');
 	free(av_join);
-	
 	ac = ft_count_ac(tab_char);
 	i = -1;
 	tab_int = malloc(sizeof(int) * (ft_count_ac(tab_char)));
@@ -80,7 +79,10 @@ int	*ft_fill_index(int ac, int *tab_int)
 
 	tab_index = malloc(sizeof(int) * (ac + 1));
 	if (!tab_index)
+	{
+		free(tab_int);	
 		return (NULL);
+	}
 	i = 0;
 	while (i < ac)
 	{
