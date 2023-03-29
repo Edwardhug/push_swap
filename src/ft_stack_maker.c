@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 12:37:08 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/29 11:06:30 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 11:11:51 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ int	ft_have_nothing_to_do(int ac, char **av) // don't know the aim of this fonct
 		return (1);
 	if (ac == 2 && ft_count_ac(str) == 1)
 	{
-		free(str);
+		ft_free_tab_char(str);
 		return (1);
 	}
-	free(str);
+	ft_free_tab_char(str);
 	return (0);
 }
 
