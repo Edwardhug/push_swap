@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:13:06 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/29 00:00:15 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 11:07:02 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	main(int ac, char **av)
 	ft_push_swap(&a, &b);
 	ft_print_list(a);
 	ft_free_list(a);
-	(void)b;
 	return (0);
 }
 

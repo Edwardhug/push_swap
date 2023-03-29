@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 12:37:08 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/28 22:37:07 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 11:06:30 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_stack	*ft_stack_maker(int ac, char **av, t_stack *a)
 {
-	if (ac == 1 || ac == 2)
+	if (ft_have_nothing_to_do(ac, av))
 		return (NULL);
 	if (have_error(ac, av) == 1)
 	{
@@ -34,7 +34,7 @@ int	ft_have_nothing_to_do(int ac, char **av) // don't know the aim of this fonct
 {
 	char	**str;
 
-	if (ac == 1 || ac == 2)
+	if (ac == 1)
 		return (1);
 	str = ft_split(av[1], ' ');
 	if (!str)

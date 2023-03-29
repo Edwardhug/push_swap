@@ -6,13 +6,13 @@
 #    By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/31 10:38:36 by lgabet            #+#    #+#              #
-#    Updated: 2023/03/28 14:30:38 by lgabet           ###   ########.fr        #
+#    Updated: 2023/03/29 11:01:37 by lgabet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror -g
+CFLAGS	= -Wall -Wextra -Werror
 LIBFT	= libft
 SRCS	= src/main.c\
 src/ft_error.c\
