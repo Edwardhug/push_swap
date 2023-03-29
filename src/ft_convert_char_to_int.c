@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 14:02:14 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/29 11:43:17 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/29 11:56:24 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_join_every_arg(int ac, char **av)
 			free(tab);
 			return (NULL);
 		}
-		tab = ft_strjoin(tab, " ");
+		tab = ft_strjoin_free(tab, " ");
 		if (!tab)
 		{
 			free(tab);
