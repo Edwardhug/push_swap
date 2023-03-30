@@ -6,13 +6,13 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:06:56 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/29 20:17:54 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/30 12:26:47 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	have_error(int ac, char **av)
+int	have_error_ps(int ac, char **av)
 {
 	if (have_no_number_charac(ac, av) == 1)
 		return (1);

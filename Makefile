@@ -6,14 +6,15 @@
 #    By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/31 10:38:36 by lgabet            #+#    #+#              #
-#    Updated: 2023/03/29 11:01:37 by lgabet           ###   ########.fr        #
+#    Updated: 2023/03/30 12:39:55 by lgabet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= push_swap
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
-LIBFT	= libft
+PATH_LIB	= Libft/
+LIBA		= libft.a
 SRCS	= src/main.c\
 src/ft_error.c\
 src/ft_make_tab.c\
@@ -39,19 +40,21 @@ all: $(NAME)
 %.o : %.c $(INCLUDES)
 	$(CC) $(CFLAGS) -c $< -o ${<:.c=.o}
 	
-$(NAME) : $(OBJS) $(INCLUDES)
-	@make -C $(LIBFT)
-	@cp libft/libftprintf.a .
-	@mv libftprintf.a $(NAME)
-	$(CC) $(CFLAGS) $(OBJS) libft/libftprintf.a -o $(NAME)
+$(LIBA) : FORCE
+	@make -C $(PATH_LIB)
+
+$(NAME) : $(OBJS) $(INCLUDES) $(LIBA)
+	$(CC) $(CFLAGS) $(OBJS) $(PATH_LIB)$(LIBA) -o $(NAME)
+
+FORCE:
 
 clean:
 	rm -f ${OBJS}
-	@make clean -C $(LIBFT)
+	@make clean -C $(PATH_LIB)
 
 fclean: clean
 	rm -f $(NAME)
-	@make fclean -C $(LIBFT)
+	@make fclean -C $(PATH_LIB)
 
 re: fclean all
 

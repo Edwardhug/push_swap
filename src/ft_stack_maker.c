@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 12:37:08 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/29 20:39:27 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/30 12:27:16 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_stack	*ft_stack_maker(int ac, char **av, t_stack *a)
 {
 	if (ft_have_nothing_to_do(ac, av))
 		return (NULL);
-	if (have_error(ac, av) == 1)
+	if (have_error_ps(ac, av) == 1)
 	{
 		write(2, "Error\n", 6);
 		return (NULL);

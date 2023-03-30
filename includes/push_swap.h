@@ -6,15 +6,16 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:40:52 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/29 21:05:42 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/30 12:27:32 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../libft/includes/ft_printf.h"
-# include "../libft/libft/includes/libft.h"
+# include "../Libft/printf/includes/ft_printf.h"
+# include "../Libft/libft/includes/libft.h"
+# include "../Libft/get_next_line/includes/get_next_line_bonus.h"
 # include <limits.h>
 
 typedef struct s_stack
@@ -23,7 +24,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }				t_stack;
 
-int		have_error(int ac, char **av);
+int		have_error_ps(int ac, char **av);
 int		have_no_number_charac(int ac, char **av);
 int		have_space(char **av);
 t_stack	*ft_fill_tab(int ac, char **av);
