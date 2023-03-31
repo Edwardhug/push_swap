@@ -6,16 +6,14 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:40:52 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/30 12:27:32 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/03/31 13:40:38 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../Libft/printf/includes/ft_printf.h"
-# include "../Libft/libft/includes/libft.h"
-# include "../Libft/get_next_line/includes/get_next_line_bonus.h"
+# include "../Libft/libft.h"
 # include <limits.h>
 
 typedef struct s_stack
