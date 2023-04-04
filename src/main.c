@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:13:06 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/29 20:23:56 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/04/04 15:44:03 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	main(int ac, char **av)
 
 	a = NULL;
 	b = NULL;
+	if (ac == 1)
+		return (0);
 	a = ft_stack_maker(ac, av, a);
 	if (!a)
 		return (1);
