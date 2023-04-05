@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 14:02:14 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/29 20:53:51 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/04/05 11:51:30 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,20 @@ int	ft_strlen_error(char *str)
 	while (str[i] != '\0')
 		i++;
 	return (i);
+}
+
+int	ft_too_long(int ac, char **tab_char)
+{
+	int	i;
+	int	tamp;
+
+	i = 1;
+	while (i < ac)
+	{
+		tamp = ft_atoi_error(tab_char[i]);
+		if (tamp == 0 && ft_strlen(tab_char[i]) != 1)
+			return (1);
+		i++;
+	}
+	return (0);
 }

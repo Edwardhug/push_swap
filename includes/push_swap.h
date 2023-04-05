@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/31 19:40:52 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/31 13:40:38 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/04/05 11:51:46 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	ft_free_tab_char(char **str);
 char	*ft_strjoin_free(char *s1, char *s2);
 int		ft_strlen_error(char *str);
 char	**ft_make_tab_char(int ac, char **av);
+int		ft_too_long(int ac, char **tab_char);
 
 void	ft_print_list(t_stack *a);
 

@@ -6,7 +6,7 @@
 /*   By: lgabet <lgabet@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:06:56 by lgabet            #+#    #+#             */
-/*   Updated: 2023/03/30 12:26:47 by lgabet           ###   ########.fr       */
+/*   Updated: 2023/04/05 11:48:31 by lgabet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	have_error_ps(int ac, char **av)
 	else if (av[1][0] == '\0')
 		return (1);
 	else if (av[1][0] == ' ' && av[1][1] == '\0')
+		return (1);
+	else if (ft_too_long(ac, av) == 1)
 		return (1);
 	return (0);
 }
